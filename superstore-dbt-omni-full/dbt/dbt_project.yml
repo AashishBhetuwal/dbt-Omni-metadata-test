@@ -1,0 +1,6 @@
+name: superstore_metadata_only
+version: 1.0.0
+config-version: 2
+profile: default
+model-paths: ["models"]
+target-path: "target"

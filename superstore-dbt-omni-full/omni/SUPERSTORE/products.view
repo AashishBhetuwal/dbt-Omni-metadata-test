@@ -1,0 +1,9 @@
+schema: SUPERSTORE_DATA.SUPERSTORE
+table_name: PRODUCTS
+dimensions:
+  id: { sql: "ID", format: ID }
+  name: { sql: "NAME" }
+  department: { sql: "DEPARTMENT" }
+  category: { sql: "CATEGORY" }
+measures:
+  count: { aggregate_type: count }

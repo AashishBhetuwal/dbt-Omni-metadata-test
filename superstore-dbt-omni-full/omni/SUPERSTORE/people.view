@@ -1,0 +1,7 @@
+schema: SUPERSTORE_DATA.SUPERSTORE
+table_name: PEOPLE
+dimensions:
+  person: { sql: "PERSON" }
+  territory: { sql: "TERRITORY" }
+measures:
+  count: { aggregate_type: count }

@@ -1,0 +1,17 @@
+schema: SUPERSTORE_DATA.SUPERSTORE
+table_name: ORDERS
+dimensions:
+  order_id: { sql: "ORDER_ID" }
+  customer_id: { sql: "CUSTOMER_ID" }
+  product_id: { sql: "PRODUCT_ID" }
+  order_date: { sql: "ORDER_DATE" }
+  order_priority: { sql: "ORDER_PRIORITY" }
+  row_id: { sql: "ROW_ID" }
+  discount: { sql: "DISCOUNT" }
+  profit: { sql: "PROFIT" }
+  quantity: { sql: "QUANTITY" }
+  sales: { sql: "SALES" }
+measures:
+  order_count: { aggregate_type: count }
+  sales_sum: { sql: "SALES", aggregate_type: sum }
+  profit_sum: { sql: "PROFIT", aggregate_type: sum }

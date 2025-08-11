@@ -1,0 +1,7 @@
+schema: SUPERSTORE_DATA.SUPERSTORE
+table_name: RETURNS
+dimensions:
+  returns: { sql: "RETURNS" }
+  order_id: { sql: "ORDER_ID" }
+measures:
+  count: { aggregate_type: count }

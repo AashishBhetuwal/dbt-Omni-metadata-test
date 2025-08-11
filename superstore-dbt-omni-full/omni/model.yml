@@ -1,0 +1,4 @@
+access_grants:
+  can_see_pii:
+    user_attribute: can_see_pii
+    allowed_values: ["true"]

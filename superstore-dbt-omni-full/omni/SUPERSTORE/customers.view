@@ -1,0 +1,24 @@
+schema: SUPERSTORE_DATA.SUPERSTORE
+table_name: CUSTOMERS
+dimensions:
+  id:
+    sql: "ID"
+    primary_key: true
+    format: ID
+  customer:
+    sql: "CUSTOMER"
+  city:
+    sql: "CITY"
+  market:
+    sql: "MARKET"
+  country:
+    sql: "COUNTRY"
+  region:
+    sql: "REGION"
+  segment:
+    sql: "SEGMENT"
+  state:
+    sql: "STATE"
+measures:
+  count:
+    aggregate_type: count
