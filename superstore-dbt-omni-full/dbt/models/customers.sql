@@ -1,3 +1,3 @@
-{{ config(materialized='view', schema='ANALYTICS') }}
+{{ config(materialized='view') }}
 select *
 from {{ source('superstore','CUSTOMERS') }}
