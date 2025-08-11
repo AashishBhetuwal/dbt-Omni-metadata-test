@@ -2,7 +2,7 @@ version: 2
 sources:
   - name: superstore
     database: SUPERSTORE_DATA
-    schema: SUPERSTORE
+    schema: SUPERSTORE_DATA_ANALYTICS
     tables:
       - name: CUSTOMERS
         columns:
