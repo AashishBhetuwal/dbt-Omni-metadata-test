@@ -1,14 +1,11 @@
+version: 2
 sources:
-  - name: SUPERSTORE
+  - name: superstore
     database: SUPERSTORE_DATA
-    schema: SUPERSTORE          # raw tables live here
+    schema: SUPERSTORE
     tables:
       - name: CUSTOMERS
-        columns:
-          - name: CUSTOMER
-            meta: { contains_pii: true }
       - name: ORDERS
       - name: PEOPLE
       - name: PRODUCTS
       - name: RETURNS
-      - name: SALES
