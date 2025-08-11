@@ -5,7 +5,19 @@ sources:
     schema: SUPERSTORE
     tables:
       - name: CUSTOMERS
+        columns:
+          - name: CUSTOMER
+            meta:
+              contains_pii: true
+          - name: ID
+          - name: CITY
+          - name: MARKET
+          - name: COUNTRY
+          - name: REGION
+          - name: SEGMENT
+          - name: STATE
       - name: ORDERS
       - name: PEOPLE
       - name: PRODUCTS
       - name: RETURNS
+      - name: SALES
