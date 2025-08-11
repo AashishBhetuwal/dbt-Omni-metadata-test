@@ -1,0 +1,8 @@
+name: dbt_metadata_only_superstore
+version: 1.0.0
+config-version: 2
+
+profile: default  # managed in dbt Cloud
+
+model-paths: ["models"]
+target-path: "target"

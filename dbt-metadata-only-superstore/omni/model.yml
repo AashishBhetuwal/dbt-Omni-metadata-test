@@ -1,0 +1,5 @@
+# Omni model snippet: define an access grant used for PII fields
+access_grants:
+  can_see_pii:
+    user_attribute: can_see_pii
+    allowed_values: ["true"]
