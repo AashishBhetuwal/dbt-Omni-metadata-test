@@ -8,3 +8,4 @@ target-path: "target"
 models:
   superstore_metadata_only:
     +materialized: view
+    +schema: SUPERSTORE_DATA_ANALYTICS

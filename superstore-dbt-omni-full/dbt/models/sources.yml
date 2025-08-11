@@ -1,5 +1,5 @@
 sources:
-  - name: superstore
+  - name: SUPERSTORE
     database: SUPERSTORE_DATA
     schema: SUPERSTORE          # raw tables live here
     tables:
