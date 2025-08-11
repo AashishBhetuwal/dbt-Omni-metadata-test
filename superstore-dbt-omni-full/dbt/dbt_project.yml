@@ -4,3 +4,7 @@ config-version: 2
 profile: default
 model-paths: ["models"]
 target-path: "target"
+
+models:
+  superstore_metadata_only:
+    +materialized: view

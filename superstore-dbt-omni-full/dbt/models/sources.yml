@@ -1,21 +1,12 @@
-version: 2
 sources:
   - name: superstore
     database: SUPERSTORE_DATA
-    schema: SUPERSTORE
+    schema: SUPERSTORE          # raw tables live here
     tables:
       - name: CUSTOMERS
         columns:
           - name: CUSTOMER
-            meta:
-              contains_pii: true
-          - name: ID
-          - name: CITY
-          - name: MARKET
-          - name: COUNTRY
-          - name: REGION
-          - name: SEGMENT
-          - name: STATE
+            meta: { contains_pii: true }
       - name: ORDERS
       - name: PEOPLE
       - name: PRODUCTS
