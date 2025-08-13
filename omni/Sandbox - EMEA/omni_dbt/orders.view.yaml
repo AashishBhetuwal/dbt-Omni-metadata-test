@@ -5,6 +5,20 @@ schema: omni_dbt
 table_name: ORDERS
 
 dimensions:
+  created_date_dynamic:
+    sql: CASE WHEN {{# superstore__orders.timeframe_selector.filter }}'Yearly'{{/
+      superstore__orders.timeframe_selector.filter }} THEN DATE_TRUNC('YEAR',
+      ${omni_dbt__orders.order_date}) WHEN {{#
+      superstore__orders.timeframe_selector.filter }}'Quarterly'{{/
+      superstore__orders.timeframe_selector.filter }} THEN DATEADD(DAY, -1,
+      DATEADD(QUARTER, 1, DATE_TRUNC('QUARTER',
+      ${omni_dbt__orders.order_date}))) WHEN {{#
+      superstore__orders.timeframe_selector.filter }}'Monthly'{{/
+      superstore__orders.timeframe_selector.filter }} THEN DATE_TRUNC('MONTH',
+      ${omni_dbt__orders.order_date}) ELSE NULL END
+    label: Dynamic Date
+    timeframes: [ date ]
+
   customer_id:
     sql: '"CUSTOMER_ID"'
     format: ID
@@ -15,6 +29,7 @@ dimensions:
   order_id:
     sql: '"ORDER_ID"'
     format: ID
+    primary_key: true
 
   order_priority:
     sql: '"ORDER_PRIORITY"'
@@ -42,6 +57,17 @@ dimensions:
 measures:
   count:
     aggregate_type: count
+
+filters:
+  timeframe_selector:
+    type: string
+    suggestion_list:
+      - value: Yearly
+      - value: Quarterly
+      - value: Monthly
+    default_filter:
+      is: Monthly
+    filter_single_select_only: true
 
 #The info below was pulled from your dbt repository and is read-only.
 dbt:
