@@ -1,0 +1,34 @@
+# Reference this view as superstore_data_analytics__products
+schema: SUPERSTORE_DATA_ANALYTICS
+table_name: PRODUCTS
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  name:
+    sql: '"NAME"'
+
+  department:
+    sql: '"DEPARTMENT"'
+
+  category:
+    sql: '"CATEGORY"'
+
+measures:
+  count:
+    aggregate_type: count
+
+#The info below was pulled from your dbt repository and is read-only.
+dbt:
+  name: products
+  target_schema: SUPERSTORE_DATA_ANALYTICS
+  config:
+    materialized: view
+  code: |-
+    {{ config(materialized='view') }}
+
+    select *
+    from {{ source('superstore', 'PRODUCTS') }}
