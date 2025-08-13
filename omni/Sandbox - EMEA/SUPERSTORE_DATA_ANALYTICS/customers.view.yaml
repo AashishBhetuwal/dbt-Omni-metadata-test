@@ -33,14 +33,3 @@ dimensions:
 measures:
   count:
     aggregate_type: count
-
-#The info below was pulled from your dbt repository and is read-only.
-dbt:
-  name: customers
-  target_schema: SUPERSTORE_DATA_ANALYTICS
-  config:
-    materialized: view
-  code: |-
-    {{ config(materialized='view') }}
-    select *
-    from {{ source('superstore','CUSTOMERS') }}
