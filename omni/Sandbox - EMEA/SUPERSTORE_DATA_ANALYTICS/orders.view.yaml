@@ -41,6 +41,10 @@ measures:
   count:
     aggregate_type: count
 
+  sales_sum:
+    sql: ${superstore_data_analytics__orders.sales}
+    aggregate_type: sum
+
 #The info below was pulled from your dbt repository and is read-only.
 dbt:
   name: orders
