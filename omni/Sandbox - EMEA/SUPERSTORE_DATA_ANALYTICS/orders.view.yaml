@@ -5,7 +5,7 @@ table_name: ORDERS
 dimensions:
   customer_id:
     sql: '"CUSTOMER_ID"'
-    label: cus_id
+    label: cus_id_test
     format: ID
 
   order_date:
