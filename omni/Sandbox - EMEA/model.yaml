@@ -1,4 +1,11 @@
-ignored_schemas: [ POPCORN.IMDB, POPCORN.PUBLIC, POPCORN.REPORTING, POPCORN.MOVIELENS ]
+ignored_schemas:
+  [
+    SUPERSTORE,
+    POPCORN.IMDB,
+    POPCORN.PUBLIC,
+    POPCORN.REPORTING,
+    POPCORN.MOVIELENS
+  ]
 
 ignored_views: [ superstore__sales ]
 
