@@ -1,5 +1,7 @@
-# Reference this view as superstore__customers
-schema: SUPERSTORE
+# Reference this view as omni_dbt__customers
+schema_label: ""
+
+schema: omni_dbt
 table_name: CUSTOMERS
 
 dimensions:
@@ -10,7 +12,6 @@ dimensions:
 
   customer:
     sql: '"CUSTOMER"'
-    required_access_grants: [ can_see_pii ]
 
   city:
     sql: '"CITY"'
@@ -33,13 +34,6 @@ dimensions:
 measures:
   count:
     aggregate_type: count
-
-filters:
-  dynamic_filter_test:
-    type: string
-    suggest_from_field: superstore__customers.market
-    default_filter:
-      is: user_attribute_name
 
 #The info below was pulled from your dbt repository and is read-only.
 dbt:

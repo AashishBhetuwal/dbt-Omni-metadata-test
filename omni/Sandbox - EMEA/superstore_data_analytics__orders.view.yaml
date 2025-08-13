@@ -1,0 +1,4 @@
+# Reference this view as superstore_data_analytics__orders
+dimensions:
+  customer_id:
+    label: cus_id_test

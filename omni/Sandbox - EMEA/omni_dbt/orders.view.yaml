@@ -1,11 +1,12 @@
-# Reference this view as superstore_data_analytics__orders
-schema: SUPERSTORE_DATA_ANALYTICS
+# Reference this view as omni_dbt__orders
+schema_label: ""
+
+schema: omni_dbt
 table_name: ORDERS
 
 dimensions:
   customer_id:
     sql: '"CUSTOMER_ID"'
-    label: cus_id
     format: ID
 
   order_date:
@@ -45,7 +46,7 @@ measures:
 #The info below was pulled from your dbt repository and is read-only.
 dbt:
   name: orders
-  target_schema: SUPERSTORE_DATA_ANALYTICS
+  target_schema: SUPERSTORE
   config:
     materialized: view
   code: |-

@@ -1,5 +1,7 @@
-# Reference this view as superstore_data_analytics__products
-schema: SUPERSTORE_DATA_ANALYTICS
+# Reference this view as omni_dbt__products
+schema_label: ""
+
+schema: omni_dbt
 table_name: PRODUCTS
 
 dimensions:
@@ -24,7 +26,7 @@ measures:
 #The info below was pulled from your dbt repository and is read-only.
 dbt:
   name: products
-  target_schema: SUPERSTORE_DATA_ANALYTICS
+  target_schema: SUPERSTORE
   config:
     materialized: view
   code: |-
