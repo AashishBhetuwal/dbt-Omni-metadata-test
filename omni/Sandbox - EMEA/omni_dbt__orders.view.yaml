@@ -1,9 +1,4 @@
 # Reference this view as omni_dbt__orders
-schema_label: ""
-
-schema: omni_dbt
-table_name: ORDERS
-
 dimensions:
   created_date_dynamic:
     sql: CASE WHEN {{# superstore__orders.timeframe_selector.filter }}'Yearly'{{/
@@ -19,45 +14,6 @@ dimensions:
     label: Dynamic Date
     timeframes: [ date ]
 
-  customer_id:
-    sql: '"CUSTOMER_ID"'
-    format: ID
-
-  order_date:
-    sql: '"ORDER_DATE"'
-
-  order_id:
-    sql: '"ORDER_ID"'
-    format: ID
-    primary_key: true
-
-  order_priority:
-    sql: '"ORDER_PRIORITY"'
-
-  row_id:
-    sql: '"ROW_ID"'
-    format: ID
-
-  discount:
-    sql: '"DISCOUNT"'
-
-  profit:
-    sql: '"PROFIT"'
-
-  quantity:
-    sql: '"QUANTITY"'
-
-  sales:
-    sql: '"SALES"'
-
-  product_id:
-    sql: '"PRODUCT_ID"'
-    format: ID
-
-measures:
-  count:
-    aggregate_type: count
-
 filters:
   timeframe_selector:
     type: string
@@ -68,15 +24,4 @@ filters:
     default_filter:
       is: Monthly
     filter_single_select_only: true
-
-#The info below was pulled from your dbt repository and is read-only.
-dbt:
-  name: orders
-  target_schema: SUPERSTORE
-  config:
-    materialized: view
-  code: |-
-    {{ config(materialized='view') }}
-
-    select *
-    from {{ source('superstore', 'ORDERS') }}
+custom_compound_primary_key_sql: [ "${omni_dbt__orders.order_id}" ]
