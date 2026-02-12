@@ -1,0 +1,35 @@
+# Reference this view as superstore_data_analytics__customers
+schema: SUPERSTORE_DATA_ANALYTICS
+table_name: CUSTOMERS
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  customer:
+    sql: '"CUSTOMER"'
+    required_access_grants: [ can_see_pii ]
+
+  city:
+    sql: '"CITY"'
+
+  market:
+    sql: '"MARKET"'
+
+  country:
+    sql: '"COUNTRY"'
+
+  region:
+    sql: '"REGION"'
+
+  segment:
+    sql: '"SEGMENT"'
+
+  state:
+    sql: '"STATE"'
+
+measures:
+  count:
+    aggregate_type: count

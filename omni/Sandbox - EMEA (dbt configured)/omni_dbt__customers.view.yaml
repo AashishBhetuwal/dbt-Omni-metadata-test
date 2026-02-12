@@ -1,0 +1,14 @@
+# Reference this view as omni_dbt__customers
+dimensions:
+  market: {}
+  country: {}
+
+  customer:
+    required_access_grants: [ can_see_pii ]
+
+filters:
+  dynamic_filter_test:
+    type: string
+    suggest_from_field: superstore__customers.market
+    default_filter:
+      is: user_attribute_name
